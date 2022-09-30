@@ -108,8 +108,9 @@ namespace pdfapis.Controllers
              sw.Close();*/
            
             FileW p = new FileW();
-            
-            return new string[] { await p.WriteAsync(c.ToString())};
+            string dl = await p.WriteAsync(c.ToString());
+            Console.WriteLine(dl);
+            return new string[] { dl};
         
             //
 

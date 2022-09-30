@@ -15,7 +15,7 @@ namespace pdfapis.Controllers
             {
                 await sw.WriteAsync(data);
                 sw.Close();
-                return FirebaseUploadAsync(convertedBionic) + "";
+                return await FirebaseUploadAsync(convertedBionic) + "";
 
             }
           
@@ -86,6 +86,7 @@ namespace pdfapis.Controllers
 
                 // await the task to wait until upload completes and get the download url
                 var downloadUrl = await task;
+            Console.WriteLine(downloadUrl);
                 return downloadUrl;
             }
 
